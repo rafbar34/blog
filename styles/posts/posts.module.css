@@ -1,0 +1,51 @@
+.container {
+  min-height: 630px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.box_cards {
+  
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.card {
+  display: flex;
+  height: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 10px;
+  background: rgba(245, 209, 209, 0.4);
+  background: rgba(245, 209, 209, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15.4px);
+  -webkit-backdrop-filter: blur(15.4px);
+  border: 1px solid rgba(245, 209, 209, 0.61);
+}
+
+.image {
+  min-width: 200px;
+  max-width: 35%;
+  height: 160px;
+  object-fit: scale-down;
+  opacity: 0.9;
+  border-radius: 8px;
+}
+.box_content {
+  font-size: 14px;
+  width: 200px;
+  height: inherit;
+  border-radius: 8px;
+  background-color: white;
+  opacity: 0.8;
+  padding: 5px;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+}
