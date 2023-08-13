@@ -24,20 +24,20 @@ export const Navigator = (props: NavigatorType) => {
       route: '/posts/dinner',
     },
     {
-      title: 'Cakes',
+      title: 'Breakfasts',
       img: null,
-      route: '/posts/cake',
+      route: '/posts/breakfast',
     },
     {
-      title: 'Fast foods',
+      title: 'Lunches',
       img: null,
-      route: '/posts/fast-food',
+      route: '/posts/lunch',
     },
-    {
-      title: 'Contact',
-      img: null,
-      route: '/contact',
-    },
+    // {
+    //   title: 'Contact',
+    //   img: null,
+    //   route: '/contact',
+    // },
   ];
   return (
     <div className={styles.container}>

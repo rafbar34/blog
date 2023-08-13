@@ -7,7 +7,7 @@ export const Card = ({props}: any) => {
   return (
     <button
       onClick={() => {
-        router.push(`/posts/${props.category}/${props.title}`);
+        router.push(`/posts/${props.category}/${props._id}`);
       }}
       className={styles.card}>
       <div className={styles.box_images}>
