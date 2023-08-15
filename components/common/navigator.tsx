@@ -33,11 +33,11 @@ export const Navigator = (props: NavigatorType) => {
       img: null,
       route: '/posts/lunch',
     },
-    // {
-    //   title: 'Contact',
-    //   img: null,
-    //   route: '/contact',
-    // },
+    {
+      title: 'Contact',
+      img: null,
+      route: '/contact',
+    },
   ];
   return (
     <div className={styles.container}>

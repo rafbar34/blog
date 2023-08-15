@@ -11,7 +11,7 @@ export default function Home() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eum
           mollitia, odit magnam ut laudantium provident neque. Ratione ad
           ducimus neque, eveniet corporis accusamus delectus pariatur
-          praesentium fugiat in quod.
+          praesentium fugiat in quod.lorem
         </div>
       </div>
     </div>
