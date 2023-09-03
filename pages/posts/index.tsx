@@ -1,8 +1,10 @@
 import {useRouter} from 'next/router';
 import styles from '../../styles/posts/posts.module.css';
 import {CardsList} from '@/components/common/posts/cards-list';
+import { PostsType} from '@/types/posts';
 
-const AllPostsPage = ({fetchedPosts}) => {
+const AllPostsPage = ({fetchedPosts}:PostsType) => {
+  console.log(typeof fetchedPosts);
   return (
     <div className={styles.container}>
       <CardsList posts={fetchedPosts.posts} />

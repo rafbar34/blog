@@ -1,7 +1,15 @@
+export type PostType = {
+  title: string;
+  content: string;
+  img: string;
+  category?: string;
+  _id: string;
+};
+
+export type PostCard = {posts: PostType[]};
+
 export type PostsType = {
-    title:string;
-    content:string;
-    img:string
-    category?:string
-    _id:string
-}
+  fetchedPosts: {
+    posts: PostType[];
+  };
+};
