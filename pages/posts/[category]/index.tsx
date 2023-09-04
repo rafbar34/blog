@@ -3,7 +3,8 @@ import styles from '../../../styles/posts/posts.module.css';
 import {CardsList} from '@/components/common/posts/cards-list';
 import {useMemo} from 'react';
 import {GetStaticPaths} from 'next';
-const CategoryPage = ({filterCategories}) => {
+import {ParamsType, PostCard, PostType} from '@/types/posts';
+const CategoryPage = ({filterCategories}: PostCard) => {
   const router = useRouter();
 
   return (
@@ -18,12 +19,13 @@ const CategoryPage = ({filterCategories}) => {
 };
 export default CategoryPage;
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({params}: ParamsType) {
+  console.log(params, 'test');
   try {
     const response = await fetch('http://localhost:3000/api/allPosts');
     const fetchedData = await response.json();
-    const filterCategories = fetchedData.posts.filter((item) => {
-      return item.category === params.category;
+    const filterCategories = fetchedData.posts.filter((item: PostCard) => {
+      return String(item.category) === String(params.category);
     });
     return {
       props: {

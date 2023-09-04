@@ -6,8 +6,12 @@ export type PostType = {
   _id: string;
 };
 
-export type PostCard = {posts: PostType[]};
-
+export type PostCard = {[props: string]: PostType[]};
+export type ParamsType = {
+  params: {
+    [key: string]: string;
+  };
+};
 export type PostsType = {
   fetchedPosts: {
     posts: PostType[];

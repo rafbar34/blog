@@ -1,8 +1,9 @@
 import {PostDetails} from '@/components/common/posts/post-details/post-details';
 import styles from '../../../styles/posts/post-details/details.module.css';
 import {useRouter} from 'next/router';
-const DetailsPostPage = ({detailsPost}) => {
- console.log(detailsPost)
+import {PostCard, PostType} from '@/types/posts';
+const DetailsPostPage = ({detailsPost}: PostCard) => {
+  console.log(detailsPost);
 
   return (
     <div className={styles.container}>
@@ -16,11 +17,11 @@ const DetailsPostPage = ({detailsPost}) => {
 };
 export default DetailsPostPage;
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: {query: {slug: PostType[]}}) {
   try {
     const response = await fetch('http://localhost:3000/api/allPosts');
     const fetchedData = await response.json();
-    const detailsPost = fetchedData.posts.filter((item) => {
+    const detailsPost = fetchedData.posts.filter((item: PostCard) => {
       return item._id === context.query.slug;
     });
     return {
