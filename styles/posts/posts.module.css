@@ -3,6 +3,7 @@
   height: 100%;
   width: 100%;
   justify-content: center;
+  
   display: flex;
 }
 
@@ -13,6 +14,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+}
+@media only screen and (max-width: 600px) {
+  .box_cards {
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
 }
 .card {
   display: flex;
@@ -48,4 +59,20 @@
   flex-wrap: wrap;
   word-wrap: break-word;
   overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+
+  .box_content {
+    margin-top: 25px;
+    font-size: 14px;
+    width: 200px;
+    height: inherit;
+    border-radius: 8px;
+    background-color: white;
+    opacity: 0.8;
+    padding: 5px;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
 }
