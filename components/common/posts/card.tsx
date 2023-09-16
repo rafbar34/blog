@@ -1,7 +1,8 @@
 import {useRouter} from 'next/router';
 import styles from '../../../styles/posts/posts.module.css';
+import {PostCard, PostType} from '@/types/posts';
 
-export const Card = ({props}: any) => {
+export const Card = ({props}: {props: PostType}) => {
   const router = useRouter();
 
   return (

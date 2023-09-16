@@ -8,10 +8,10 @@ export const connectDatabase = async () => {
 };
 
 export const insertDocument = async (
-  document,
-  client,
-  collection,
-  category
+  document:object,
+  client:any,
+  collection:any,
+  category:string
 ) => {
   const response = await client
     .db(category)
@@ -51,8 +51,8 @@ export const findItems = async (
   database: string,
   client: any,
   collection: string,
-  item,
-  category
+  item:object,
+  category:string
 ) => {
   const res = await client
     .db(database)
