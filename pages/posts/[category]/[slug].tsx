@@ -2,8 +2,8 @@ import {PostDetails} from '@/components/common/posts/post-details/post-details';
 import styles from '../../../styles/posts/post-details/details.module.css';
 import {useRouter} from 'next/router';
 import {PostCard, PostType} from '@/types/posts';
+import {useSelector} from 'react-redux';
 const DetailsPostPage = ({detailsPost}: PostCard) => {
-  console.log(detailsPost);
 
   return (
     <div className={styles.container}>

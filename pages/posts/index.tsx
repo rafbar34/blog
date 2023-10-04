@@ -1,10 +1,26 @@
 import {useRouter} from 'next/router';
+import {useEffect} from 'react';
 import styles from '../../styles/posts/posts.module.css';
 import {CardsList} from '@/components/common/posts/cards-list';
-import { PostsType} from '@/types/posts';
+import {PostsType} from '@/types/posts';
+import {useSelector, useDispatch} from 'react-redux';
+import {fetchAllPosts} from '@/slices/postsSlice';
 
-const AllPostsPage = ({fetchedPosts}:PostsType) => {
-  console.log(typeof fetchedPosts);
+const AllPostsPage = ({fetchedPosts}: PostsType) => {
+  const getPosts = useSelector((state) => state.posts.posts);
+  const getStatus = useSelector((state) => state.posts.status);
+  const fetchPostsDispatch = useDispatch();
+  useEffect(() => {
+    try {
+      fetchPostsDispatch(fetchAllPosts());
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+  console.log(getStatus,getPosts);
+  if (getStatus === 'pending') {
+    return <div> loading</div>;
+  }
   return (
     <div className={styles.container}>
       <CardsList posts={fetchedPosts.posts} />
