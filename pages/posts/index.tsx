@@ -17,13 +17,13 @@ const AllPostsPage = ({fetchedPosts}: PostsType) => {
       console.log(err);
     }
   }, []);
-  console.log(getStatus,getPosts);
+
   if (getStatus === 'pending') {
     return <div> loading</div>;
   }
   return (
     <div className={styles.container}>
-      <CardsList posts={fetchedPosts.posts} />
+      <CardsList posts={getPosts} />
     </div>
   );
 };
